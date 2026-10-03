@@ -199,9 +199,10 @@ fun ApplyWallpaperScreen(content: Content, id: String, prefs: PrefsState, onBack
                     PreviewMode.LOCK -> LockOverlay(frameW.value)
                     PreviewMode.HOME -> HomeOverlay()
                 }
-                AnimatedVisibility(state == ApplyState.Done, enter = fadeIn(), exit = fadeOut(), modifier = Modifier.align(Alignment.Center)) {
+                val doneAlpha by animateFloatAsState(if (state == ApplyState.Done) 1f else 0f, tween(300), label = "done")
+                if (doneAlpha > 0f) {
                     Box(
-                        Modifier.size(64.dp).clip(CircleShape).background(Grace.Gold),
+                        Modifier.align(Alignment.Center).alpha(doneAlpha).size(64.dp).clip(CircleShape).background(Grace.Gold),
                         contentAlignment = Alignment.Center,
                     ) {
                         Icon(Icons.Filled.Check, contentDescription = "Done", tint = Grace.Night, modifier = Modifier.size(34.dp))
