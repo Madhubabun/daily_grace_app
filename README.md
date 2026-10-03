@@ -110,9 +110,9 @@ On every one of them the full safe zone is kept.
 
 The GitHub Actions workflow builds both APKs on every push:
 
-- **Actions tab → latest run → Artifacts**: `daily-grace-debug-apk` and `daily-grace-release-apk`.
-- **Tag a version** (`git tag v0.1.0 && git push --tags`) to publish both APKs on the
-  Releases page, where they can be downloaded straight to a phone.
+- **Releases page**: every build of `main` is published as "Daily Grace build N" with
+  `DailyGrace-release.apk` and `DailyGrace-debug.apk`, downloadable straight to a phone.
+- **Actions tab → run → Artifacts** has the same APKs zipped.
 
 Locally, with Android Studio or the Android SDK installed:
 
