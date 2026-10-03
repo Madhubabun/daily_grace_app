@@ -122,7 +122,10 @@ fun SettingsScreen(content: Content, prefs: PrefsState, onBack: () -> Unit) {
         }
 
         Group("About") {
-            AboutRow("Scripture", "${content.translation.name} (${content.translation.code}). Public domain. One translation is used throughout.")
+            content.usedTranslations.forEachIndexed { i, t ->
+                if (i > 0) Divider()
+                AboutRow("Scripture · ${t.code}", listOf(t.name, t.note).filter { it.isNotBlank() }.joinToString(". "))
+            }
             Divider()
             AboutRow("Artwork", "Prototype artwork generated for Daily Grace. Final illustrations will replace it.")
             Divider()

@@ -25,8 +25,13 @@ artwork, never baked into an image, so it is always correctly spelled, crisp and
 - Works fully offline. No account, no server, no analytics, no ads.
 - Permissions: `SET_WALLPAPER`, `POST_NOTIFICATIONS` (only asked when the reminder is turned on)
   and `RECEIVE_BOOT_COMPLETED` (to keep the reminder after a restart). Nothing else.
-- Scripture: **King James Version (KJV)**, public domain, used consistently. "LORD" is set in
-  small capitals as in printed KJV Bibles. Every verse was checked against a public-domain KJV text.
+- Scripture: 71 verses. Entries 001 to 029 are the **King James Version (KJV)**, public domain,
+  checked against a public-domain KJV text. Entries 030 to 071 are the **New International Version
+  (NIV)**; every reference is labelled with its translation, and the NIV notice is in Settings → About.
+  The NIV wording still needs a word-for-word check: see [docs/niv-checklist.md](docs/niv-checklist.md).
+  "LORD" is set in small capitals as in printed Bibles.
+- Gentle motion: Today drifts slowly, and the Psalm 23 pasture (entry 001) is a living scene with
+  drifting clouds, wandering sheep, swaying grass and passing birds.
 
 ## Tech stack
 
@@ -51,20 +56,21 @@ app/src/main/
     actions/   set wallpaper, share
     notify/    daily reminder
     ui/        theme, components, screens, navigation
-tools/artwork/              generator for the placeholder artwork
+tools/artwork/              generator for the painted artwork (scenes.py, scenes2.py, pasture.py)
 ```
 
-## Adding wallpapers 030, 031, ... (no code changes)
+## Adding wallpapers 072, 073, ... (no code changes)
 
-1. Put the artwork at `app/src/main/assets/wallpapers/wallpaper_030.jpg` (1440 x 3200) and a
+1. Put the artwork at `app/src/main/assets/wallpapers/wallpaper_072.jpg` (1440 x 3200) and a
    432 x 960 copy in `wallpapers/thumbs/` with the same name.
 2. Add an entry to `entries` in `assets/content/verses.json`:
 
 ```json
 {
-  "id": "030",
-  "dateIndex": 30,
-  "image": "wallpaper_030.jpg",
+  "id": "072",
+  "dateIndex": 72,
+  "image": "wallpaper_072.jpg",
+  "translation": "KJV",
   "verse": "The LORD is my shepherd; I shall not want.",
   "reference": "Psalm 23:1",
   "theme": "Peace",
@@ -75,7 +81,8 @@ tools/artwork/              generator for the placeholder artwork
 }
 ```
 
-`layout` is `top`, `center` or `bottom`: put the verse where the artwork is calm. Optional
+`translation` is a code from the top-level `translations` object (default: the main
+translation). `layout` is `top`, `center` or `bottom`: put the verse where the artwork is calm. Optional
 `focusY` (0 to 1) says where the important subject sits vertically. A new category name in
 `categories` appears in the Wallpapers filter automatically. Entries with a missing image or
 an empty verse are skipped rather than crashing the app.
@@ -93,8 +100,15 @@ All wallpapers are composed for 20:9 at 1440 x 3200 with a safe-zone approach:
 - **No text in the artwork.** The app renders Scripture itself.
 - Leave calm negative space where the entry's `layout` puts the verse.
 
-The current images are **placeholder artwork** painted procedurally by
-`tools/artwork/generate.py` (Python 3 with Pillow and NumPy). Replace them with final
+The images are painted procedurally by `tools/artwork/generate.py` (Python 3 with Pillow and
+NumPy): biblical scenes in silhouette, with Jesus only ever a distant figure.
+
+### Animated scenes
+
+An entry with `"animation": "pasture"` uses the layers in `assets/animated/pasture/`
+(background, a seamless cloud strip, one sprite per sheep, a grass band, a vignette and
+`manifest.json`). `tools/artwork/pasture.py` writes the layers and regenerates the static
+`wallpaper_001.jpg` from the same layers, so the wallpaper always matches the Today screen. Replace them with final
 illustrations at any time; keep the file names or update `verses.json`.
 
 ## How wallpapers fit every phone
@@ -148,5 +162,5 @@ from (Files, WhatsApp, Chrome…) when Android asks.
 
 ## Credits
 
-- Scripture: King James Version, public domain.
+- Scripture: King James Version, public domain. Scripture quotations marked NIV are taken from The Holy Bible, New International Version®, NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.™ Used by permission. All rights reserved worldwide.
 - Fonts: Cormorant Garamond and Inter, SIL Open Font License 1.1.

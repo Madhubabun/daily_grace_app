@@ -32,6 +32,24 @@ class ContentTest {
     }
 
     @Test
+    fun everyEntryHasAKnownTranslationAndAnimationAssets() {
+        val content = ContentParser.parseContent(asset("content/verses.json").readText())
+        assertTrue("NIV is declared", "NIV" in content.translations)
+        for (e in content.entries) {
+            assertTrue("${e.id} translation ${e.translation}", e.translation in content.translations)
+            e.animation?.let { name ->
+                val manifest = org.json.JSONObject(asset("animated/$name/manifest.json").readText())
+                val dir = asset("animated/$name")
+                assertTrue(File(dir, manifest.getString("background")).exists())
+                val sprites = manifest.getJSONArray("sprites")
+                for (i in 0 until sprites.length()) {
+                    assertTrue(File(dir, sprites.getJSONObject(i).getString("image")).exists())
+                }
+            }
+        }
+    }
+
+    @Test
     fun psalm23IsExactKjv() {
         val content = ContentParser.parseContent(asset("content/verses.json").readText())
         val e = content.entries.first { it.reference == "Psalm 23:1" }

@@ -154,7 +154,7 @@ fun WallpapersScreen(content: Content, actions: EntryActions, bottomInset: Dp, p
         verticalArrangement = Arrangement.spacedBy(12.dp),
     ) {
         item(span = { GridItemSpan(maxLineSpan) }) {
-            ScreenHeader("Wallpapers", "${content.entries.size} verses · ${content.translation.name}", horizontal = 8.dp)
+            ScreenHeader("Wallpapers", "${content.entries.size} verses · " + content.usedTranslations.joinToString(" & ") { it.code }, horizontal = 8.dp)
         }
         item(span = { GridItemSpan(maxLineSpan) }) {
             LazyRow(
@@ -259,7 +259,7 @@ private fun HistoryRow(day: LocalDate, entry: GraceEntry, isFavorite: Boolean, o
             )
             Spacer(Modifier.height(6.dp))
             Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(entry.reference, style = MaterialTheme.typography.bodySmall, color = Grace.Muted)
+                Text("${entry.reference} · ${entry.translation}", style = MaterialTheme.typography.bodySmall, color = Grace.Muted)
                 if (isFavorite) {
                     Spacer(Modifier.width(8.dp))
                     Icon(Icons.Filled.Favorite, contentDescription = "Saved", tint = Grace.Gold, modifier = Modifier.size(13.dp))

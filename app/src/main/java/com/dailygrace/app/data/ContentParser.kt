@@ -18,12 +18,20 @@ object ContentParser {
             name = t?.optString("name").orEmpty().ifBlank { "King James Version" },
             note = t?.optString("note").orEmpty(),
         )
+        val translations = LinkedHashMap<String, Translation>()
+        translations[translation.code] = translation
+        root.optJSONObject("translations")?.let { all ->
+            for (code in all.keys()) {
+                val o = all.optJSONObject(code) ?: continue
+                translations[code] = Translation(code, o.optString("name").ifBlank { code }, o.optString("note"))
+            }
+        }
         val entriesJson = root.optJSONArray("entries") ?: JSONArray()
         val seen = HashSet<String>()
         val entries = buildList {
             for (i in 0 until entriesJson.length()) {
                 val o = entriesJson.optJSONObject(i) ?: continue
-                val entry = parseEntry(o, i + 1) ?: continue
+                val entry = parseEntry(o, i + 1, translation.code) ?: continue
                 if (!seen.add(entry.id)) continue
                 if (!imageExists(entry.image)) continue
                 add(entry)
@@ -34,10 +42,10 @@ object ContentParser {
         // Categories used by entries but not declared still show up, so adding content never needs code changes.
         val used = entries.flatMap { it.categories }.distinct()
         val categories = declared + used.filter { it !in declared }
-        return Content(translation, categories, entries)
+        return Content(translation, categories, entries, translations)
     }
 
-    private fun parseEntry(o: JSONObject, fallbackIndex: Int): GraceEntry? {
+    private fun parseEntry(o: JSONObject, fallbackIndex: Int, defaultTranslation: String): GraceEntry? {
         val id = o.optString("id").trim()
         val verse = o.optString("verse").trim()
         val reference = o.optString("reference").trim()
@@ -59,6 +67,8 @@ object ContentParser {
             layout = VerseLayout.parse(o.optString("layout")),
             focusY = o.optDouble("focusY", defaultFocus(VerseLayout.parse(o.optString("layout")))).toFloat().coerceIn(0f, 1f),
             excerpt = o.optBoolean("excerpt", false),
+            translation = o.optString("translation").trim().ifEmpty { defaultTranslation },
+            animation = o.optString("animation").trim().takeIf { it.isNotEmpty() },
         )
     }
 

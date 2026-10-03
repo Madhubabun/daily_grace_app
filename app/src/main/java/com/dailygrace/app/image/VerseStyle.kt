@@ -1,5 +1,6 @@
 package com.dailygrace.app.image
 
+import com.dailygrace.app.data.GraceEntry
 import com.dailygrace.app.data.VerseLayout
 
 /** Typography and placement rules shared by the screen, the share image and the wallpaper. */
@@ -43,6 +44,9 @@ object VerseStyle {
         VerseLayout.CENTER -> 0.5f
         VerseLayout.BOTTOM -> 0.68f
     }
+
+    /** "Psalm 23:1 · KJV": the translation is always named, since entries may differ. */
+    fun referenceLine(entry: GraceEntry): String = "${entry.reference} \u00B7 ${entry.translation}"
 
     fun quoted(verse: String): String = "“" + verse.trim() + "”"
 

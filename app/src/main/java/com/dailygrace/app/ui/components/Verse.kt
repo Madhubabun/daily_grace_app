@@ -128,7 +128,7 @@ fun VerseOverlay(
                 )
                 Spacer(Modifier.height(width * 0.05f))
                 Text(
-                    entry.reference.uppercase(),
+                    VerseStyle.referenceLine(entry).uppercase(),
                     style = TextStyle(
                         fontFamily = Interface,
                         fontWeight = FontWeight.Medium,

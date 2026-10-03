@@ -99,7 +99,7 @@ object GraceRenderer {
             textAlign = Paint.Align.CENTER
             setShadowLayer(width * 0.008f, 0f, 0f, Color.argb(120, 0, 0, 0))
         }
-        val reference = entry.reference.uppercase()
+        val reference = VerseStyle.referenceLine(entry).uppercase()
         val gap = width * 0.05f
         val refHeight = refPaint.fontSpacing
         val blockHeight = verseLayout.height + gap + refHeight

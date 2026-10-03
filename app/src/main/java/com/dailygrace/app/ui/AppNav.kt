@@ -154,7 +154,7 @@ private fun GraceNavHost(content: Content) {
         setWallpaper = { nav.navigate(Routes.apply(it.id)) },
         share = { entry ->
             scope.launch {
-                Sharer.share(context, entry, content.translation.code).onFailure {
+                Sharer.share(context, entry, entry.translation).onFailure {
                     Toast.makeText(context, "Couldn’t prepare the image to share", Toast.LENGTH_SHORT).show()
                 }
             }

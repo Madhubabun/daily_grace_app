@@ -98,6 +98,14 @@ fun ArtworkImage(
         full?.let {
             Image(it, null, layer.alpha(fullAlpha), alignment = alignment, contentScale = ContentScale.Crop, filterQuality = FilterQuality.High)
         }
+        val animationName = entry.animation
+        if (animate && animationName != null) {
+            val scene = rememberLayeredScene(animationName)
+            val sceneAlpha by animateFloatAsState(if (scene != null && full != null) 1f else 0f, tween(700), label = "sceneAlpha")
+            scene?.let {
+                AnimatedLayeredScene(it, (entry.focusY * 2f - 1f).coerceIn(-1f, 1f), layer.alpha(sceneAlpha))
+            }
+        }
         if (animate) {
             // A slow, barely visible bloom of morning light from above.
             Canvas(Modifier.fillMaxSize()) {
