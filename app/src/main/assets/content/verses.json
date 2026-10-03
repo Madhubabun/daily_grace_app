@@ -1,0 +1,503 @@
+{
+  "version": 1,
+  "translation": {
+    "code": "KJV",
+    "name": "King James Version",
+    "note": "Public domain. LORD is set in small capitals, as in printed KJV Bibles."
+  },
+  "categories": [
+    "Jesus",
+    "Faith",
+    "Peace",
+    "Hope",
+    "God's Love",
+    "Strength",
+    "Worship",
+    "Nature & Creation",
+    "Cross",
+    "Bible",
+    "Psalm 23",
+    "Family",
+    "Marriage",
+    "Gratitude"
+  ],
+  "entries": [
+    {
+      "id": "001",
+      "dateIndex": 1,
+      "image": "wallpaper_001.jpg",
+      "verse": "The LORD is my shepherd; I shall not want.",
+      "reference": "Psalm 23:1",
+      "excerpt": false,
+      "theme": "Guidance",
+      "categories": [
+        "Psalm 23",
+        "Peace"
+      ],
+      "reflection": "You are never walking through life alone. Trust the Shepherd who knows the way, and rest in His care today.",
+      "prayer": "Lord, You are my Shepherd. Lead me today, provide what I need, and help me to trust You with every step. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "002",
+      "dateIndex": 2,
+      "image": "wallpaper_002.jpg",
+      "verse": "Be still, and know that I am God.",
+      "reference": "Psalm 46:10",
+      "excerpt": true,
+      "theme": "Stillness",
+      "categories": [
+        "Peace"
+      ],
+      "reflection": "You don’t have to control everything today. Be still, trust God, and allow Him to lead you.",
+      "prayer": "Lord, help me to be still and trust You today. When I feel anxious or uncertain, remind me that You are in control. Give me peace and strengthen my faith. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "003",
+      "dateIndex": 3,
+      "image": "wallpaper_003.jpg",
+      "verse": "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",
+      "reference": "Isaiah 41:10",
+      "excerpt": false,
+      "theme": "Courage",
+      "categories": [
+        "Strength",
+        "Faith"
+      ],
+      "reflection": "Whatever is in front of you today, you will not face it alone. The same God who calls you is the God who holds you up.",
+      "prayer": "Father, when fear rises in me, remind me that You are with me. Strengthen me, help me, and hold me in Your hand today. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "004",
+      "dateIndex": 4,
+      "image": "wallpaper_004.jpg",
+      "verse": "I can do all things through Christ which strengtheneth me.",
+      "reference": "Philippians 4:13",
+      "excerpt": false,
+      "theme": "Strength",
+      "categories": [
+        "Strength"
+      ],
+      "reflection": "Strength for today does not come from trying harder, but from leaning closer to Christ. Take the next step with Him.",
+      "prayer": "Lord Jesus, I cannot do this on my own. Be my strength in every task and every struggle today. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "005",
+      "dateIndex": 5,
+      "image": "wallpaper_005.jpg",
+      "verse": "Come unto me, all ye that labour and are heavy laden, and I will give you rest.",
+      "reference": "Matthew 11:28",
+      "excerpt": false,
+      "theme": "Rest",
+      "categories": [
+        "Jesus",
+        "Peace"
+      ],
+      "reflection": "Jesus does not ask you to carry everything. Bring Him what is heavy, and let Him give you rest.",
+      "prayer": "Jesus, I come to You with all that weighs on me. Take my burdens and give my soul Your rest. Amen.",
+      "layout": "center",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "006",
+      "dateIndex": 6,
+      "image": "wallpaper_006.jpg",
+      "verse": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
+      "reference": "John 3:16",
+      "excerpt": false,
+      "theme": "God’s Love",
+      "categories": [
+        "God's Love",
+        "Cross"
+      ],
+      "reflection": "Before you did anything for God, He gave everything for you. You are deeply and personally loved.",
+      "prayer": "Thank You, Father, for loving me enough to give Your Son. Let Your love shape how I live and how I love others today. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "007",
+      "dateIndex": 7,
+      "image": "wallpaper_007.jpg",
+      "verse": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
+      "reference": "Jeremiah 29:11",
+      "excerpt": false,
+      "theme": "Hope",
+      "categories": [
+        "Hope"
+      ],
+      "reflection": "God’s thoughts toward you are thoughts of peace. Even when the way is unclear, He knows the end from the beginning.",
+      "prayer": "Lord, I trust that Your plans for me are good. Calm my worries about tomorrow and fill me with hope. Amen.",
+      "layout": "center",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "008",
+      "dateIndex": 8,
+      "image": "wallpaper_008.jpg",
+      "verse": "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.",
+      "reference": "Proverbs 3:5–6",
+      "excerpt": false,
+      "theme": "Guidance",
+      "categories": [
+        "Faith"
+      ],
+      "reflection": "You don’t need to see the whole road. Acknowledge God in the next small decision, and trust Him to direct your path.",
+      "prayer": "Lord, I choose to trust You more than my own understanding. Direct my paths and guide each decision I make today. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "009",
+      "dateIndex": 9,
+      "image": "wallpaper_009.jpg",
+      "verse": "The LORD shall preserve thy going out and thy coming in from this time forth, and even for evermore.",
+      "reference": "Psalm 121:8",
+      "excerpt": false,
+      "theme": "Protection",
+      "categories": [
+        "Faith",
+        "Peace"
+      ],
+      "reflection": "Every going out and every coming in is watched over by the Lord. Go into your day held in His keeping.",
+      "prayer": "Lord, watch over me and those I love as we go out and come in today. Keep us safe under Your care. Amen.",
+      "layout": "center",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "010",
+      "dateIndex": 10,
+      "image": "wallpaper_010.jpg",
+      "verse": "In every thing give thanks: for this is the will of God in Christ Jesus concerning you.",
+      "reference": "1 Thessalonians 5:18",
+      "excerpt": false,
+      "theme": "Gratitude",
+      "categories": [
+        "Gratitude"
+      ],
+      "reflection": "Gratitude does not wait for a perfect day. Look for one gift from God today, and thank Him for it.",
+      "prayer": "Father, open my eyes to Your goodness in the ordinary moments of today, and give me a thankful heart in every thing. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "011",
+      "dateIndex": 11,
+      "image": "wallpaper_011.jpg",
+      "verse": "Let every thing that hath breath praise the LORD. Praise ye the LORD.",
+      "reference": "Psalm 150:6",
+      "excerpt": false,
+      "theme": "Worship",
+      "categories": [
+        "Worship"
+      ],
+      "reflection": "Every breath you take today is a gift and an invitation to praise. Let your life be a quiet song of worship.",
+      "prayer": "Lord, with every breath I have, I praise You. Let my words and my actions bring You glory today. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "012",
+      "dateIndex": 12,
+      "image": "wallpaper_012.jpg",
+      "verse": "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.",
+      "reference": "John 14:27",
+      "excerpt": false,
+      "theme": "Peace",
+      "categories": [
+        "Peace",
+        "Jesus"
+      ],
+      "reflection": "The peace of Jesus is not the absence of trouble but His presence in the middle of it. Let your heart rest in Him.",
+      "prayer": "Jesus, give me Your peace that the world cannot give. When my heart is troubled, let it rest in You. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "013",
+      "dateIndex": 13,
+      "image": "wallpaper_013.jpg",
+      "verse": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.",
+      "reference": "Romans 15:13",
+      "excerpt": false,
+      "theme": "Hope",
+      "categories": [
+        "Hope"
+      ],
+      "reflection": "Hope is not something you have to produce. It is a gift the God of hope pours into you as you trust Him.",
+      "prayer": "God of hope, fill me with joy and peace as I trust in You, and let Your hope overflow into the lives around me. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "014",
+      "dateIndex": 14,
+      "image": "wallpaper_014.jpg",
+      "verse": "As for me and my house, we will serve the LORD.",
+      "reference": "Joshua 24:15",
+      "excerpt": true,
+      "theme": "Family",
+      "categories": [
+        "Family"
+      ],
+      "reflection": "A home that serves the Lord is built in small daily choices: a prayer together, a kind word, a moment of forgiveness.",
+      "prayer": "Lord, bless my home and my family. Help us to love one another and to serve You together, every day. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "015",
+      "dateIndex": 15,
+      "image": "wallpaper_015.jpg",
+      "verse": "What therefore God hath joined together, let not man put asunder.",
+      "reference": "Mark 10:9",
+      "excerpt": false,
+      "theme": "Marriage",
+      "categories": [
+        "Marriage"
+      ],
+      "reflection": "Marriage is a covenant God Himself joins together. Protect it with patience, prayer, and everyday kindness.",
+      "prayer": "Father, strengthen the marriages around me. Bind husbands and wives together in love, patience, and faithfulness. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "016",
+      "dateIndex": 16,
+      "image": "wallpaper_016.jpg",
+      "verse": "Thy word is a lamp unto my feet, and a light unto my path.",
+      "reference": "Psalm 119:105",
+      "excerpt": false,
+      "theme": "God’s Word",
+      "categories": [
+        "Bible"
+      ],
+      "reflection": "God’s Word may not light the whole journey at once, but it always gives enough light for the next step.",
+      "prayer": "Lord, let Your Word be a lamp to my feet today. Speak to me through Scripture and help me to walk in its light. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "017",
+      "dateIndex": 17,
+      "image": "wallpaper_017.jpg",
+      "verse": "For the preaching of the cross is to them that perish foolishness; but unto us which are saved it is the power of God.",
+      "reference": "1 Corinthians 1:18",
+      "excerpt": false,
+      "theme": "The Cross",
+      "categories": [
+        "Cross"
+      ],
+      "reflection": "The cross can look like weakness to the world, yet it is where God’s power to save is shown most clearly.",
+      "prayer": "Lord Jesus, thank You for the cross. Let its power change my heart and give me courage to live for You. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "018",
+      "dateIndex": 18,
+      "image": "wallpaper_018.jpg",
+      "verse": "The heavens declare the glory of God; and the firmament sheweth his handywork.",
+      "reference": "Psalm 19:1",
+      "excerpt": false,
+      "theme": "Creation",
+      "categories": [
+        "Nature & Creation",
+        "Worship"
+      ],
+      "reflection": "Look up tonight. Every star is a quiet reminder of the glory and greatness of the God who made you.",
+      "prayer": "Creator God, the heavens declare Your glory. Open my eyes to see Your hand in the world around me. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "019",
+      "dateIndex": 19,
+      "image": "wallpaper_019.jpg",
+      "verse": "I am the good shepherd: the good shepherd giveth his life for the sheep.",
+      "reference": "John 10:11",
+      "excerpt": false,
+      "theme": "The Good Shepherd",
+      "categories": [
+        "Jesus",
+        "Psalm 23"
+      ],
+      "reflection": "Jesus is not a distant guide. He is the Good Shepherd who laid down His life for you, and He still leads you.",
+      "prayer": "Good Shepherd, thank You for giving Your life for me. Help me to hear Your voice and follow You closely. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "020",
+      "dateIndex": 20,
+      "image": "wallpaper_020.jpg",
+      "verse": "Now faith is the substance of things hoped for, the evidence of things not seen.",
+      "reference": "Hebrews 11:1",
+      "excerpt": false,
+      "theme": "Faith",
+      "categories": [
+        "Faith"
+      ],
+      "reflection": "Faith is trusting God with what you cannot yet see. Walk forward today even if the mountains are still in mist.",
+      "prayer": "Lord, increase my faith. Help me to trust You with what I cannot see, and to walk forward with confidence in You. Amen.",
+      "layout": "center",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "021",
+      "dateIndex": 21,
+      "image": "wallpaper_021.jpg",
+      "verse": "It is of the LORD’s mercies that we are not consumed, because his compassions fail not. They are new every morning: great is thy faithfulness.",
+      "reference": "Lamentations 3:22–23",
+      "excerpt": false,
+      "theme": "Mercy",
+      "categories": [
+        "Hope",
+        "God's Love"
+      ],
+      "reflection": "Yesterday does not have the final word. God’s mercies are new this morning, and His faithfulness is great.",
+      "prayer": "Faithful God, thank You for mercies that are new every morning. Help me to leave yesterday with You and begin again. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "022",
+      "dateIndex": 22,
+      "image": "wallpaper_022.jpg",
+      "verse": "Have not I commanded thee? Be strong and of a good courage; be not afraid, neither be thou dismayed: for the LORD thy God is with thee whithersoever thou goest.",
+      "reference": "Joshua 1:9",
+      "excerpt": false,
+      "theme": "Courage",
+      "categories": [
+        "Strength"
+      ],
+      "reflection": "Courage is not the absence of fear. It is remembering that the Lord your God goes with you wherever you go.",
+      "prayer": "Lord, make me strong and courageous today. Remind me that You are with me wherever I go. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "023",
+      "dateIndex": 23,
+      "image": "wallpaper_023.jpg",
+      "verse": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.",
+      "reference": "Isaiah 40:31",
+      "excerpt": false,
+      "theme": "Renewal",
+      "categories": [
+        "Strength",
+        "Hope"
+      ],
+      "reflection": "Waiting on the Lord is not wasted time. It is where weary hearts are renewed and given strength to rise again.",
+      "prayer": "Lord, I wait on You. Renew my strength, lift my weary heart, and help me to run and not grow weary. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "024",
+      "dateIndex": 24,
+      "image": "wallpaper_024.jpg",
+      "verse": "O come, let us worship and bow down: let us kneel before the LORD our maker.",
+      "reference": "Psalm 95:6",
+      "excerpt": false,
+      "theme": "Worship",
+      "categories": [
+        "Worship"
+      ],
+      "reflection": "Worship begins with humility. Take a moment today to quiet your heart and bow before the Lord who made you.",
+      "prayer": "Lord my Maker, I bow before You in worship. Receive my praise and draw my heart closer to You. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "025",
+      "dateIndex": 25,
+      "image": "wallpaper_025.jpg",
+      "verse": "This is the day which the LORD hath made; we will rejoice and be glad in it.",
+      "reference": "Psalm 118:24",
+      "excerpt": false,
+      "theme": "Joy",
+      "categories": [
+        "Gratitude",
+        "Nature & Creation"
+      ],
+      "reflection": "Today is not an accident. It is a day the Lord has made, and there is joy to be found in it.",
+      "prayer": "Lord, thank You for this day. Help me to rejoice in it and to notice the good gifts You have placed in it. Amen.",
+      "layout": "center",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "026",
+      "dateIndex": 26,
+      "image": "wallpaper_026.jpg",
+      "verse": "We love him, because he first loved us.",
+      "reference": "1 John 4:19",
+      "excerpt": false,
+      "theme": "God’s Love",
+      "categories": [
+        "God's Love"
+      ],
+      "reflection": "Your love for God is always a response. He loved you first, and His love makes it possible for you to love.",
+      "prayer": "Father, thank You for loving me first. Let Your love flow through me to everyone I meet today. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "027",
+      "dateIndex": 27,
+      "image": "wallpaper_027.jpg",
+      "verse": "I will both lay me down in peace, and sleep: for thou, LORD, only makest me dwell in safety.",
+      "reference": "Psalm 4:8",
+      "excerpt": false,
+      "theme": "Rest",
+      "categories": [
+        "Peace"
+      ],
+      "reflection": "You can lay down the cares of this day. The Lord who watched over you today will keep you safe tonight.",
+      "prayer": "Lord, as this day ends, I give You my worries. Let me lie down in peace and sleep, safe in Your care. Amen.",
+      "layout": "bottom",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "028",
+      "dateIndex": 28,
+      "image": "wallpaper_028.jpg",
+      "verse": "He maketh me to lie down in green pastures: he leadeth me beside the still waters.",
+      "reference": "Psalm 23:2",
+      "excerpt": false,
+      "theme": "Rest",
+      "categories": [
+        "Psalm 23",
+        "Nature & Creation"
+      ],
+      "reflection": "Sometimes God leads you to rest before He leads you onward. Receive the quiet places He gives.",
+      "prayer": "Lord, lead me beside still waters today. Quiet my heart and restore my soul in Your presence. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    },
+    {
+      "id": "029",
+      "dateIndex": 29,
+      "image": "wallpaper_029.jpg",
+      "verse": "My voice shalt thou hear in the morning, O LORD; in the morning will I direct my prayer unto thee, and will look up.",
+      "reference": "Psalm 5:3",
+      "excerpt": false,
+      "theme": "Prayer",
+      "categories": [
+        "Faith",
+        "Worship"
+      ],
+      "reflection": "Begin the day by talking with God. Tell Him what is on your heart, then look up and watch for His answer.",
+      "prayer": "Lord, hear my voice this morning. I bring my prayer to You and I will look up, trusting You to answer. Amen.",
+      "layout": "top",
+      "artwork": "placeholder"
+    }
+  ]
+}
