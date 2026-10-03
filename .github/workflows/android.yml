@@ -56,12 +56,18 @@ jobs:
           name: daily-grace-release-apk
           path: app/build/outputs/apk/release/*.apk
 
-      # Tag a commit (for example v0.1.0) to publish the APKs on the repository's Releases page,
-      # where they can be downloaded straight to a phone.
+      # Every build of main is published on the repository's Releases page, so the newest APKs
+      # can be downloaded straight to a phone. Pushing a v* tag publishes a named version too.
       - name: Publish release
-        if: startsWith(github.ref, 'refs/tags/v')
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || format('build-{0}', github.run_number) }}
+          name: ${{ startsWith(github.ref, 'refs/tags/v') && format('Daily Grace {0}', github.ref_name) || format('Daily Grace build {0}', github.run_number) }}
+          target_commitish: ${{ github.sha }}
+          make_latest: true
+          body: |
+            Install **DailyGrace-release.apk** on your phone. DailyGrace-debug.apk is for testing and installs alongside it.
           files: |
             app/build/outputs/apk/release/*.apk
             app/build/outputs/apk/debug/*.apk
