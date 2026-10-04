@@ -1,6 +1,10 @@
 package com.dailygrace.app.ui.screens
 
 import android.app.TimePickerDialog
+import android.content.Intent
+import android.net.Uri
+import android.provider.Settings
+import android.widget.Toast
 import android.text.format.DateFormat
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -30,11 +34,19 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dailygrace.app.BuildConfig
@@ -57,6 +69,17 @@ fun SettingsScreen(content: Content, prefs: PrefsState, onBack: () -> Unit) {
     val is24h = DateFormat.is24HourFormat(context)
     val time = LocalTime.of(prefs.reminderHour, prefs.reminderMinute)
     val timeText = time.format(DateTimeFormatter.ofPattern(if (is24h) "HH:mm" else "h:mm a", Locale.getDefault()))
+
+    // Re-checked whenever the screen comes back, e.g. after allowing notifications in Android settings.
+    var notificationsAllowed by remember { mutableStateOf(Reminder.notificationsAllowed(context)) }
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
+    DisposableEffect(lifecycle) {
+        val observer = LifecycleEventObserver { _, event ->
+            if (event == Lifecycle.Event.ON_RESUME) notificationsAllowed = Reminder.notificationsAllowed(context)
+        }
+        lifecycle.addObserver(observer)
+        onDispose { lifecycle.removeObserver(observer) }
+    }
 
     Column(
         Modifier
@@ -100,6 +123,43 @@ fun SettingsScreen(content: Content, prefs: PrefsState, onBack: () -> Unit) {
                     Text("When the reminder arrives", style = MaterialTheme.typography.bodySmall, color = Grace.Muted)
                 }
                 Text(timeText, style = MaterialTheme.typography.titleMedium, color = Grace.Gold)
+            }
+            if (prefs.reminderEnabled) {
+                if (!notificationsAllowed) {
+                    Divider()
+                    ActionRow(
+                        title = "Notifications are blocked",
+                        body = "Android is hiding Daily Grace notifications. Tap to allow them.",
+                        warn = true,
+                    ) {
+                        context.startActivity(
+                            Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
+                                .putExtra(Settings.EXTRA_APP_PACKAGE, context.packageName)
+                                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                        )
+                    }
+                }
+                Divider()
+                ActionRow(
+                    title = "Send a test notification",
+                    body = "Shows today’s reminder now, so you can see it works.",
+                ) {
+                    if (Reminder.notificationsAllowed(context)) {
+                        Reminder.show(context)
+                    } else {
+                        Toast.makeText(context, "Allow notifications for Daily Grace first.", Toast.LENGTH_LONG).show()
+                    }
+                }
+                Divider()
+                ActionRow(
+                    title = "Reminder late or missing?",
+                    body = "Some phones pause apps to save battery. Tap, open Battery, and choose Unrestricted.",
+                ) {
+                    context.startActivity(
+                        Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null))
+                            .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK),
+                    )
+                }
             }
         }
 
@@ -193,6 +253,19 @@ private fun SwitchRow(title: String, body: String, checked: Boolean, onChange: (
                 uncheckedBorderColor = Grace.Line,
             ),
         )
+    }
+}
+
+@Composable
+private fun ActionRow(title: String, body: String, warn: Boolean = false, onClick: () -> Unit) {
+    Column(
+        Modifier
+            .fillMaxWidth()
+            .clickable(onClick = onClick)
+            .padding(horizontal = 20.dp, vertical = 16.dp),
+    ) {
+        Text(title, style = MaterialTheme.typography.titleMedium, color = if (warn) Grace.Gold else Grace.Ink)
+        Text(body, style = MaterialTheme.typography.bodySmall, color = Grace.Muted)
     }
 }
 

@@ -23,14 +23,14 @@ import java.time.LocalTime
 import java.time.ZoneId
 
 /**
- * One gentle notification per day at the user's chosen time. Uses an inexact alarm window, so no
- * exact-alarm permission is needed and the battery is respected.
+ * One gentle notification per day at the user's chosen time. The alarm is allowed to fire while
+ * the phone is idle (Doze); without that, phones that sit untouched overnight (Samsung especially)
+ * hold the reminder back for hours or skip it. Exact timing is used when the system allows it.
  */
 object Reminder {
     const val CHANNEL_ID = "todays_grace"
     private const val NOTIFICATION_ID = 1001
     private const val REQUEST_CODE = 7
-    private const val WINDOW_MS = 10 * 60 * 1000L
 
     fun createChannel(context: Context) {
         val channel = NotificationChannel(
@@ -53,7 +53,22 @@ object Reminder {
         if (!prefs.reminderEnabled) return
         val trigger = nextTrigger(LocalDateTime.now(), prefs.reminderHour, prefs.reminderMinute)
         val millis = trigger.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
-        am.setWindow(AlarmManager.RTC_WAKEUP, millis, WINDOW_MS, pi)
+        val exact = Build.VERSION.SDK_INT < 31 || am.canScheduleExactAlarms()
+        try {
+            if (exact) am.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, millis, pi)
+            else am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, millis, pi)
+        } catch (_: SecurityException) {
+            am.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, millis, pi)
+        }
+    }
+
+    /** False when notifications for the app (or its channel) are switched off in Android settings. */
+    fun notificationsAllowed(context: Context): Boolean {
+        if (!canPost(context)) return false
+        val nm = NotificationManagerCompat.from(context)
+        if (!nm.areNotificationsEnabled()) return false
+        val channel = context.getSystemService(NotificationManager::class.java).getNotificationChannel(CHANNEL_ID)
+        return channel == null || channel.importance != NotificationManager.IMPORTANCE_NONE
     }
 
     fun nextTrigger(now: LocalDateTime, hour: Int, minute: Int): LocalDateTime {
